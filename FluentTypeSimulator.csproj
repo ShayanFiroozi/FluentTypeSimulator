@@ -9,6 +9,8 @@
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<UseWindowsForms>true</UseWindowsForms>
 		<StartupObject>FluentTypeSimulator.Program</StartupObject>
+		<ApplicationIcon>T.ico</ApplicationIcon>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
 
 
@@ -35,6 +37,10 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows|AnyCPU'">
 		<DebugType>none</DebugType>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="T.ico" />
+	</ItemGroup>
 
 
 </Project>
