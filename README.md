@@ -11,10 +11,11 @@
   
  
 ## Whats is **Fluent Type Simulator** used for ? 👍
+**Fluent Type Simulator** used when a we need to simulate typing very fast from another text , for example when you are recording a coding **Youtube®** shorts , online tutorials or courses.
+
+
 <br/>
-**Fluent Type Simulator** used when a we need to simulate typing very fast from another text , for example when you are recording a coding **Youtube®** shorts , recording online tutorials or courses.
-<br/>
- 
+
 ## Known Issues ‼ 
  **Not Reported Yet!** 😎
 
