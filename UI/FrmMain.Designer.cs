@@ -41,6 +41,8 @@
             this.numericKeyPressDelay = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnStart = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbAfterTypeEvent = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericStartDelay)).BeginInit();
@@ -91,6 +93,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbAfterTypeEvent);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.numericStartDelay);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.numericNewLineDelay);
@@ -135,7 +139,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(621, 34);
+            this.label3.Location = new System.Drawing.Point(621, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 4;
@@ -165,7 +169,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(328, 35);
+            this.label2.Location = new System.Drawing.Point(328, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 16);
             this.label2.TabIndex = 2;
@@ -221,6 +225,29 @@
             this.BtnStart.UseVisualStyleBackColor = false;
             this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(15, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "After Type Event :";
+            // 
+            // cmbAfterTypeEvent
+            // 
+            this.cmbAfterTypeEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAfterTypeEvent.FormattingEnabled = true;
+            this.cmbAfterTypeEvent.Items.AddRange(new object[] {
+            "-",
+            "F5"});
+            this.cmbAfterTypeEvent.Location = new System.Drawing.Point(128, 80);
+            this.cmbAfterTypeEvent.Name = "cmbAfterTypeEvent";
+            this.cmbAfterTypeEvent.Size = new System.Drawing.Size(234, 24);
+            this.cmbAfterTypeEvent.TabIndex = 7;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,5 +288,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericStartDelay;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbAfterTypeEvent;
+        private System.Windows.Forms.Label label4;
     }
 }

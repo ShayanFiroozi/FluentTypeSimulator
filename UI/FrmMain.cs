@@ -11,6 +11,8 @@ namespace FluentTypeSimulator
         {
             InitializeComponent();
 
+            cmbAfterTypeEvent.SelectedIndex = 0;
+
         }
 
 
@@ -54,7 +56,7 @@ namespace FluentTypeSimulator
                 if (!ValidateInputData()) return;
 
 
-                MessageBox.Show($"Typing will be started after {numericStartDelay.Value} seconds\n\n" +
+                MessageBox.Show($"Typing will be started after {numericStartDelay.Value / 1_000} seconds\n\n" +
                                 $"Please activate your target app and make sure to keep the focus on it.",
                                 "Start Typing",
                                 MessageBoxButtons.OK,
@@ -66,9 +68,17 @@ namespace FluentTypeSimulator
 
 
 
+                // Start typing simulation
                 await KeyboardSimulator.SimulateTyping(txtSource.Text,
                                                        (int)numericKeyPressDelay.Value,
                                                        (int)numericNewLineDelay.Value);
+
+
+
+                if (cmbAfterTypeEvent.SelectedIndex != 0)
+                {
+                    SendKeys.Send($"{cmbAfterTypeEvent.Text}");
+                }
 
             }
 
