@@ -11,25 +11,16 @@ namespace FluentTypeSimulator
         {
             InitializeComponent();
 
-#if DEBUG
-            numericStartDelay.Value = 1;
-#else
-            numericStartDelay.Value = 5;
-#endif
-
         }
 
-        private void FrmMain_Load(object sender, System.EventArgs e)
-        {
 
-        }
 
         private void BtnOpenFile_Click(object sender, System.EventArgs e)
         {
             openFileDialog1.CheckFileExists = true;
             openFileDialog1.CheckPathExists = true;
-            openFileDialog1.Title = "Open an ASCII file";
-            openFileDialog1.Filter = "All ASCII Files|*.*";
+            openFileDialog1.Title = "Open Text file";
+            openFileDialog1.Filter = "All Text Files|*.*";
             openFileDialog1.DefaultExt = "*.*";
 
             openFileDialog1.FileName = "";
@@ -55,8 +46,9 @@ namespace FluentTypeSimulator
             try
             {
 
+                groupBox1.Enabled = false;
+                groupBox2.Enabled = false;
                 BtnStart.Enabled = false;
-                txtSource.ReadOnly = true;
 
                 // Validate InputData
                 if (!ValidateInputData()) return;
@@ -70,7 +62,7 @@ namespace FluentTypeSimulator
 
 
                 // Wait before start the typing simulation
-                await Task.Delay((int)(numericStartDelay.Value * 1_000));
+                await Task.Delay((int)numericStartDelay.Value);
 
 
 
@@ -82,8 +74,9 @@ namespace FluentTypeSimulator
 
             finally
             {
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = true;
                 BtnStart.Enabled = true;
-                txtSource.ReadOnly = false;
             }
         }
 

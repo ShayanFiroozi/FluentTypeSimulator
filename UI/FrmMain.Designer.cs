@@ -76,7 +76,7 @@
             // BtnOpenFile
             // 
             this.BtnOpenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnOpenFile.ForeColor = System.Drawing.Color.Black;
+            this.BtnOpenFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnOpenFile.Location = new System.Drawing.Point(9, 419);
             this.BtnOpenFile.Name = "BtnOpenFile";
             this.BtnOpenFile.Size = new System.Drawing.Size(97, 28);
@@ -109,23 +109,23 @@
             // numericStartDelay
             // 
             this.numericStartDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericStartDelay.Location = new System.Drawing.Point(717, 33);
+            this.numericStartDelay.Location = new System.Drawing.Point(706, 32);
             this.numericStartDelay.Maximum = new decimal(new int[] {
-            20,
+            10000,
             0,
             0,
             0});
             this.numericStartDelay.Minimum = new decimal(new int[] {
-            1,
+            1000,
             0,
             0,
             0});
             this.numericStartDelay.Name = "numericStartDelay";
-            this.numericStartDelay.Size = new System.Drawing.Size(54, 22);
+            this.numericStartDelay.Size = new System.Drawing.Size(65, 22);
             this.numericStartDelay.TabIndex = 5;
             this.numericStartDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericStartDelay.Value = new decimal(new int[] {
-            5,
+            4000,
             0,
             0,
             0});
@@ -135,7 +135,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(637, 34);
+            this.label3.Location = new System.Drawing.Point(621, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 4;
@@ -146,21 +146,16 @@
             this.numericNewLineDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericNewLineDelay.Location = new System.Drawing.Point(436, 34);
             this.numericNewLineDelay.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericNewLineDelay.Minimum = new decimal(new int[] {
-            1,
+            5000,
             0,
             0,
             0});
             this.numericNewLineDelay.Name = "numericNewLineDelay";
-            this.numericNewLineDelay.Size = new System.Drawing.Size(54, 22);
+            this.numericNewLineDelay.Size = new System.Drawing.Size(68, 22);
             this.numericNewLineDelay.TabIndex = 3;
             this.numericNewLineDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericNewLineDelay.Value = new decimal(new int[] {
-            1,
+            500,
             0,
             0,
             0});
@@ -185,11 +180,21 @@
             0,
             0,
             0});
+            this.numericKeyPressDelay.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numericKeyPressDelay.Name = "numericKeyPressDelay";
             this.numericKeyPressDelay.Size = new System.Drawing.Size(54, 22);
             this.numericKeyPressDelay.TabIndex = 1;
             this.numericKeyPressDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericKeyPressDelay.ThousandsSeparator = true;
+            this.numericKeyPressDelay.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -231,7 +236,6 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fluent Type Simulator";
-            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -15,6 +15,10 @@ namespace FluentTypeSimulator.BackEnd
         {
             char[] CharsToType = Parser.ParseString(TextToType);
 
+            if (CharsToType.Length == 0)
+            {
+                throw new Exception("No word to type !");
+            }
 
             foreach (char character in CharsToType)
             {
@@ -47,12 +51,13 @@ namespace FluentTypeSimulator.BackEnd
                     // Simulate other character
 
                     if (char.IsLetter(character) || char.IsDigit(character) || char.IsNumber(character))
-
                     {
+                        // Letter or number characters
                         SendKeys.Send(character.ToString());
                     }
                     else
                     {
+                        // Special characters
                         SendKeys.Send($"{{{character}}}");
                     }
 
