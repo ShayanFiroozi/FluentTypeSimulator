@@ -16,6 +16,11 @@
 
 <br/>
 
+
+## How does it work ?
+![FluentTypeSimulator Demo](https://github.com/ShayanFiroozi/FluentTypeSimulator/blob/master/Demo.gif)
+
+
 ## Known Issues ‼ 
  **Not Reported Yet!** 😎
 
