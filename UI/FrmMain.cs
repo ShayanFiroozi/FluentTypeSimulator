@@ -43,11 +43,20 @@ namespace FluentTypeSimulator
 
         private async void BtnStart_Click(object sender, System.EventArgs e)
         {
-
+            // Validate InputData
             if (!ValidateInputData()) return;
+
+
+            MessageBox.Show($"Typing will be started after {numericStartDelay.Value} seconds\nPlease activate your target app and make sure to keep the focus on it.",
+                            "Start Typing",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
 
             // Wait before start the typing silulation
             await Task.Delay((int)(numericStartDelay.Value * 1_000));
+
+
         }
 
 
