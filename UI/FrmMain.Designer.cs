@@ -38,14 +38,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numericNewLineDelay = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericTypeSpeed = new System.Windows.Forms.NumericUpDown();
+            this.numericKeyPressDelay = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnStart = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNewLineDelay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericTypeSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericKeyPressDelay)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -70,6 +70,7 @@
             this.txtSource.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtSource.Size = new System.Drawing.Size(764, 394);
             this.txtSource.TabIndex = 1;
+            this.txtSource.Text = resources.GetString("txtSource.Text");
             this.txtSource.WordWrap = false;
             // 
             // BtnOpenFile
@@ -94,13 +95,13 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.numericNewLineDelay);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.numericTypeSpeed);
+            this.groupBox2.Controls.Add(this.numericKeyPressDelay);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Purple;
             this.groupBox2.Location = new System.Drawing.Point(12, 471);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(784, 119);
+            this.groupBox2.Size = new System.Drawing.Size(784, 117);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
@@ -108,7 +109,7 @@
             // numericStartDelay
             // 
             this.numericStartDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericStartDelay.Location = new System.Drawing.Point(718, 33);
+            this.numericStartDelay.Location = new System.Drawing.Point(717, 33);
             this.numericStartDelay.Maximum = new decimal(new int[] {
             20,
             0,
@@ -142,9 +143,8 @@
             // 
             // numericNewLineDelay
             // 
-            this.numericNewLineDelay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numericNewLineDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericNewLineDelay.Location = new System.Drawing.Point(437, 34);
+            this.numericNewLineDelay.Location = new System.Drawing.Point(436, 34);
             this.numericNewLineDelay.Maximum = new decimal(new int[] {
             10,
             0,
@@ -176,40 +176,31 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "New Line Delay :";
             // 
-            // numericTypeSpeed
+            // numericKeyPressDelay
             // 
-            this.numericTypeSpeed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericTypeSpeed.Location = new System.Drawing.Point(115, 31);
-            this.numericTypeSpeed.Maximum = new decimal(new int[] {
-            20,
+            this.numericKeyPressDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericKeyPressDelay.Location = new System.Drawing.Point(126, 32);
+            this.numericKeyPressDelay.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numericTypeSpeed.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericTypeSpeed.Name = "numericTypeSpeed";
-            this.numericTypeSpeed.Size = new System.Drawing.Size(54, 22);
-            this.numericTypeSpeed.TabIndex = 1;
-            this.numericTypeSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericTypeSpeed.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.numericKeyPressDelay.Name = "numericKeyPressDelay";
+            this.numericKeyPressDelay.Size = new System.Drawing.Size(54, 22);
+            this.numericKeyPressDelay.TabIndex = 1;
+            this.numericKeyPressDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericKeyPressDelay.ThousandsSeparator = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(15, 32);
+            this.label1.Location = new System.Drawing.Point(15, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 16);
+            this.label1.Size = new System.Drawing.Size(110, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Typing Speed :";
+            this.label1.Text = "KeyPress Delay :";
             // 
             // BtnStart
             // 
@@ -217,7 +208,7 @@
             this.BtnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnStart.ForeColor = System.Drawing.Color.SeaGreen;
-            this.BtnStart.Location = new System.Drawing.Point(309, 596);
+            this.BtnStart.Location = new System.Drawing.Point(309, 594);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(183, 41);
             this.BtnStart.TabIndex = 2;
@@ -247,7 +238,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericStartDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNewLineDelay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericTypeSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericKeyPressDelay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,7 +252,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericTypeSpeed;
+        private System.Windows.Forms.NumericUpDown numericKeyPressDelay;
         private System.Windows.Forms.NumericUpDown numericNewLineDelay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericStartDelay;

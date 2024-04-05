@@ -1,3 +1,4 @@
+using FluentTypeSimulator.BackEnd;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -9,6 +10,13 @@ namespace FluentTypeSimulator
         public FrmMain()
         {
             InitializeComponent();
+
+#if DEBUG
+            numericStartDelay.Value = 1;
+#else
+            numericStartDelay.Value = 5;
+#endif
+
         }
 
         private void FrmMain_Load(object sender, System.EventArgs e)
@@ -41,22 +49,42 @@ namespace FluentTypeSimulator
 
         }
 
+
         private async void BtnStart_Click(object sender, System.EventArgs e)
         {
-            // Validate InputData
-            if (!ValidateInputData()) return;
+            try
+            {
+
+                BtnStart.Enabled = false;
+                txtSource.ReadOnly = true;
+
+                // Validate InputData
+                if (!ValidateInputData()) return;
 
 
-            MessageBox.Show($"Typing will be started after {numericStartDelay.Value} seconds\nPlease activate your target app and make sure to keep the focus on it.",
-                            "Start Typing",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                MessageBox.Show($"Typing will be started after {numericStartDelay.Value} seconds\n\n" +
+                                $"Please activate your target app and make sure to keep the focus on it.",
+                                "Start Typing",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
 
 
-            // Wait before start the typing silulation
-            await Task.Delay((int)(numericStartDelay.Value * 1_000));
+                // Wait before start the typing simulation
+                await Task.Delay((int)(numericStartDelay.Value * 1_000));
 
 
+
+                await KeyboardSimulator.SimulateTyping(txtSource.Text,
+                                                       (int)numericKeyPressDelay.Value,
+                                                       (int)numericNewLineDelay.Value);
+
+            }
+
+            finally
+            {
+                BtnStart.Enabled = true;
+                txtSource.ReadOnly = false;
+            }
         }
 
 
@@ -72,7 +100,7 @@ namespace FluentTypeSimulator
             }
 
             // Validate Typing Speed
-            if (numericTypeSpeed.Value < 1 && numericTypeSpeed.Value > 20)
+            if (numericKeyPressDelay.Value < 1 && numericKeyPressDelay.Value > 20)
             {
                 MessageBox.Show("Invalid Typing Speed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
