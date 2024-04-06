@@ -12,20 +12,22 @@ namespace FluentTypeSimulator.BackEnd
 
         public static void PressEnter() => SendKeys.Send("{ENTER}");
 
+        public static void PressHome() => SendKeys.Send("{HOME}");
+
         public static void PressSpace() => SendKeys.Send(" ");
 
-        public static void PressCTRL_A(string character) => PressCTRLWithACharacter("a");
+        public static void PressCtrlA() => PressCTRLWithACharacter("A");
 
-        public static void PressCTRL_C(string character) => PressCTRLWithACharacter("c");
+        public static void PressCtrlC() => PressCTRLWithACharacter("C");
 
-        public static void PressCTRL_V() => PressCTRLWithACharacter("v");
+        public static void PressCtrlV() => PressCTRLWithACharacter("V");
 
 
         public static void PressSpecialCharacter(string character) => SendKeys.Send($"{{{character}}}");
 
 
 
-        public static void PressCTRLWithACharacter(string character) => SendKeys.Send($"^{character}");
+        public static void PressCTRLWithACharacter(string character) => SendKeys.Send($"^{character.ToLower()}");
 
     }
 }

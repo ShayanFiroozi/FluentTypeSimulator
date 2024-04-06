@@ -19,6 +19,7 @@ namespace FluentTypeSimulator.BackEnd
 
             foreach (char character in CharsToType)
             {
+             
                 await SimulateKeyPress(character, NewLineDelayInMilliSedonds);
 
                 if (KeyPressDelayInMilliSeconds > 0)
@@ -37,6 +38,10 @@ namespace FluentTypeSimulator.BackEnd
                 case '\n':
                     // Simulate pressing Enter
                     KeyBoardSimulator.PressEnter();
+
+                    // Bring the cursor to the begin of the new line
+                    KeyBoardSimulator.PressHome();
+
                     await Task.Delay(NewLineDelayInMilliSedonds);
                     break;
 
