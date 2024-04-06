@@ -55,6 +55,23 @@ namespace FluentTypeSimulator
                 // Validate InputData
                 if (!ValidateInputData()) return;
 
+                // Show an attention Message Box about clearing the clipboard current data
+                if (ChkCopyPaste.Checked)
+                {
+
+
+                    if (MessageBox.Show($"The Copy/Paste mode is enable , this action will clear your current clipboard data !\n\n" +
+                                      $"Do you want to continue ?",
+                                      "Start Copy Pasting !",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Exclamation) == DialogResult.No)
+                    {
+                        return;
+                    }
+
+
+                }
+
 
                 MessageBox.Show($"Typing will be started after {numericStartDelay.Value / 1_000} seconds\n\n" +
                                 $"Please activate your target app and make sure to keep the focus on it.",
@@ -67,12 +84,19 @@ namespace FluentTypeSimulator
                 await Task.Delay((int)numericStartDelay.Value);
 
 
-
-                // Start typing simulation
-                await KeyboardSimulator.SimulateTyping(txtSource.Text,
-                                                       (int)numericKeyPressDelay.Value,
-                                                       (int)numericNewLineDelay.Value);
-
+                if (ChkCopyPaste.Checked)
+                {
+                    // Start copy pasting
+                    await TypeSimulatorCopyPasteMode.StartCopyPasting(txtSource.Text,
+                                                           (int)numericNewLineDelay.Value);
+                }
+                else
+                {
+                    // Start typing simulation
+                    await TypeSimulator.SimulateTyping(txtSource.Text,
+                                                           (int)numericKeyPressDelay.Value,
+                                                           (int)numericNewLineDelay.Value);
+                }
 
 
                 if (cmbAfterTypeEvent.SelectedIndex != 0)

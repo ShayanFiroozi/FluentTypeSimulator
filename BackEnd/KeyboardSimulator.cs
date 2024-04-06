@@ -7,67 +7,25 @@ using System.Windows.Forms;
 
 namespace FluentTypeSimulator.BackEnd
 {
-    internal static class KeyboardSimulator
+    internal static class KeyBoardSimulator
     {
 
+        public static void PressEnter() => SendKeys.Send("{ENTER}");
 
-        public static async Task SimulateTyping(string TextToType, int KeyPressDelayInMilliSeconds, int NewLineDelayInMilliSedonds)
-        {
-            char[] CharsToType = Parser.ParseString(TextToType);
+        public static void PressSpace() => SendKeys.Send(" ");
 
-            if (CharsToType.Length == 0)
-            {
-                throw new Exception("No word to type !");
-            }
+        public static void PressCTRL_A(string character) => PressCTRLWithACharacter("a");
 
-            foreach (char character in CharsToType)
-            {
-                await SimulateKeyPress(character, NewLineDelayInMilliSedonds);
+        public static void PressCTRL_C(string character) => PressCTRLWithACharacter("c");
 
-                if (NewLineDelayInMilliSedonds > 0)
-                {
-                    await Task.Delay(KeyPressDelayInMilliSeconds);
-                }
-            }
+        public static void PressCTRL_V() => PressCTRLWithACharacter("v");
 
-        }
 
-        private static async Task SimulateKeyPress(char character, int NewLineDelayInMilliSedonds)
-        {
-
-            switch (character)
-            {
-                case '\n':
-                    // Simulate pressing Enter
-                    SendKeys.Send("{ENTER}");
-                    await Task.Delay(NewLineDelayInMilliSedonds);
-                    break;
-
-                case ' ':
-                    // Simulate pressing Space
-                    SendKeys.Send(" ");
-                    break;
-                default:
-                    // Simulate other character
-
-                    if (char.IsLetter(character) || char.IsDigit(character) || char.IsNumber(character))
-                    {
-                        // Letter or number characters
-                        SendKeys.Send(character.ToString());
-                    }
-                    else
-                    {
-                        // Special characters
-                        SendKeys.Send($"{{{character}}}");
-                    }
-
-                    break;
-            }
-        }
+        public static void PressSpecialCharacter(string character) => SendKeys.Send($"{{{character}}}");
 
 
 
-
+        public static void PressCTRLWithACharacter(string character) => SendKeys.Send($"^{character}");
 
     }
 }
