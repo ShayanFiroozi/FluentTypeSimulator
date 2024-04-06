@@ -34,6 +34,9 @@
             this.BtnOpenFile = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ChkCopyPaste = new System.Windows.Forms.CheckBox();
+            this.cmbAfterTypeEvent = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.numericStartDelay = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.numericNewLineDelay = new System.Windows.Forms.NumericUpDown();
@@ -91,6 +94,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ChkCopyPaste);
+            this.groupBox2.Controls.Add(this.cmbAfterTypeEvent);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.numericStartDelay);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.numericNewLineDelay);
@@ -106,9 +112,47 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
             // 
+            // ChkCopyPaste
+            // 
+            this.ChkCopyPaste.AutoSize = true;
+            this.ChkCopyPaste.Location = new System.Drawing.Point(624, 78);
+            this.ChkCopyPaste.Name = "ChkCopyPaste";
+            this.ChkCopyPaste.Size = new System.Drawing.Size(150, 20);
+            this.ChkCopyPaste.TabIndex = 8;
+            this.ChkCopyPaste.Text = "Copy/Paste Mode";
+            this.ChkCopyPaste.UseVisualStyleBackColor = true;
+            // 
+            // cmbAfterTypeEvent
+            // 
+            this.cmbAfterTypeEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAfterTypeEvent.FormattingEnabled = true;
+            this.cmbAfterTypeEvent.Items.AddRange(new object[] {
+            "-",
+            "F5"});
+            this.cmbAfterTypeEvent.Location = new System.Drawing.Point(128, 80);
+            this.cmbAfterTypeEvent.Name = "cmbAfterTypeEvent";
+            this.cmbAfterTypeEvent.Size = new System.Drawing.Size(234, 24);
+            this.cmbAfterTypeEvent.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(15, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "After Type Event :";
+            // 
             // numericStartDelay
             // 
             this.numericStartDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericStartDelay.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.numericStartDelay.Location = new System.Drawing.Point(706, 32);
             this.numericStartDelay.Maximum = new decimal(new int[] {
             10000,
@@ -124,6 +168,7 @@
             this.numericStartDelay.Size = new System.Drawing.Size(65, 22);
             this.numericStartDelay.TabIndex = 5;
             this.numericStartDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericStartDelay.ThousandsSeparator = true;
             this.numericStartDelay.Value = new decimal(new int[] {
             4000,
             0,
@@ -135,7 +180,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(621, 34);
+            this.label3.Location = new System.Drawing.Point(621, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 4;
@@ -144,6 +189,11 @@
             // numericNewLineDelay
             // 
             this.numericNewLineDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericNewLineDelay.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numericNewLineDelay.Location = new System.Drawing.Point(436, 34);
             this.numericNewLineDelay.Maximum = new decimal(new int[] {
             5000,
@@ -154,6 +204,7 @@
             this.numericNewLineDelay.Size = new System.Drawing.Size(68, 22);
             this.numericNewLineDelay.TabIndex = 3;
             this.numericNewLineDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericNewLineDelay.ThousandsSeparator = true;
             this.numericNewLineDelay.Value = new decimal(new int[] {
             500,
             0,
@@ -165,7 +216,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(328, 35);
+            this.label2.Location = new System.Drawing.Point(328, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 16);
             this.label2.TabIndex = 2;
@@ -174,6 +225,11 @@
             // numericKeyPressDelay
             // 
             this.numericKeyPressDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericKeyPressDelay.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numericKeyPressDelay.Location = new System.Drawing.Point(126, 32);
             this.numericKeyPressDelay.Maximum = new decimal(new int[] {
             1000,
@@ -261,5 +317,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericStartDelay;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbAfterTypeEvent;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox ChkCopyPaste;
     }
 }
