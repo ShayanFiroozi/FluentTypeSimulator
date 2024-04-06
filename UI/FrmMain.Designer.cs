@@ -128,7 +128,9 @@
             this.cmbAfterTypeEvent.FormattingEnabled = true;
             this.cmbAfterTypeEvent.Items.AddRange(new object[] {
             "-",
-            "F5"});
+            "F5",
+            "Ctrl+F5",
+            "Ctrl+S"});
             this.cmbAfterTypeEvent.Location = new System.Drawing.Point(128, 80);
             this.cmbAfterTypeEvent.Name = "cmbAfterTypeEvent";
             this.cmbAfterTypeEvent.Size = new System.Drawing.Size(234, 24);
@@ -206,7 +208,7 @@
             this.numericNewLineDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericNewLineDelay.ThousandsSeparator = true;
             this.numericNewLineDelay.Value = new decimal(new int[] {
-            500,
+            200,
             0,
             0,
             0});

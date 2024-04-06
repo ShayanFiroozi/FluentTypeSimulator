@@ -99,9 +99,17 @@ namespace FluentTypeSimulator
                 }
 
 
-                if (cmbAfterTypeEvent.SelectedIndex != 0)
+                switch (cmbAfterTypeEvent.SelectedIndex)
                 {
-                    SendKeys.Send($"{cmbAfterTypeEvent.Text}");
+                    case 1:
+                        SendKeys.Send("{F5}");
+                        break;
+                    case 2:
+                        KeyBoardSimulator.PressCTRLWithACharacter("F5");
+                        break;
+                    case 3:
+                        KeyBoardSimulator.PressCTRLWithACharacter("S");
+                        break;
                 }
 
             }

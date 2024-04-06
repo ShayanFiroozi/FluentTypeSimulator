@@ -16,18 +16,18 @@ namespace FluentTypeSimulator.BackEnd
 
         public static void PressSpace() => SendKeys.Send(" ");
 
-        public static void PressCtrlA() => PressCTRLWithACharacter("a");
+        public static void PressCtrlA() => PressCTRLWithACharacter("A");
 
-        public static void PressCtrlC() => PressCTRLWithACharacter("c");
+        public static void PressCtrlC() => PressCTRLWithACharacter("C");
 
-        public static void PressCtrlV() => PressCTRLWithACharacter("v");
+        public static void PressCtrlV() => PressCTRLWithACharacter("V");
 
 
         public static void PressSpecialCharacter(string character) => SendKeys.Send($"{{{character}}}");
 
 
 
-        public static void PressCTRLWithACharacter(string character) => SendKeys.Send($"^{character}");
+        public static void PressCTRLWithACharacter(string character) => SendKeys.Send($"^{character.ToLower()}");
 
     }
 }
