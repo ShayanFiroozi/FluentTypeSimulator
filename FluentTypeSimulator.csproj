@@ -43,5 +43,9 @@
 	  <Content Include="T.ico" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include="C:\Users\Shayan\Desktop\Heart.html" Link="Heart.html" />
+	</ItemGroup>
+
 
 </Project>
