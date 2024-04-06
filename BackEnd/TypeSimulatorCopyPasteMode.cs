@@ -39,8 +39,11 @@ namespace FluentTypeSimulator.BackEnd
                 Clipboard.Clear();
                 Clipboard.SetText(line);
 
+                // Bring the cursor to the begin of the new line
+                KeyBoardSimulator.PressHome();
+
                 // Paste Data from clipboard
-                KeyBoardSimulator.PressCTRL_V();
+                KeyBoardSimulator.PressCtrlV();
 
 
                 // Go to the new linw
