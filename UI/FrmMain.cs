@@ -88,14 +88,14 @@ namespace FluentTypeSimulator
                 {
                     // Start copy pasting
                     await TypeSimulatorCopyPasteMode.StartCopyPasting(txtSource.Text,
-                                                           (int)numericNewLineDelay.Value);
+                                                                     (int)numericNewLineDelay.Value);
                 }
                 else
                 {
                     // Start typing simulation
                     await TypeSimulator.SimulateTyping(txtSource.Text,
-                                                           (int)numericKeyPressDelay.Value,
-                                                           (int)numericNewLineDelay.Value);
+                                                      (int)numericKeyPressDelay.Value,
+                                                      (int)numericNewLineDelay.Value);
                 }
 
 

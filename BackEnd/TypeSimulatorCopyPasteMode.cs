@@ -42,9 +42,12 @@ namespace FluentTypeSimulator.BackEnd
                 // Bring the cursor to the begin of the new line
                 KeyBoardSimulator.PressHome();
 
+                await Task.Delay(1);
+
                 // Paste Data from clipboard
                 KeyBoardSimulator.PressCtrlV();
 
+                await Task.Delay(1);
 
                 // Go to the new linw
                 KeyBoardSimulator.PressEnter();
